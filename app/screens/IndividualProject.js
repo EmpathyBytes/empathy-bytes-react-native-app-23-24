@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Dimensions } from "react-native";
+import { View, SafeAreaView, StatusBar, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Dimensions } from "react-native";
 import { COLORS } from "../../constants/theme";
 import BackArrow from '../../constants/BackArrow';
 import BorderBox from '../../constants/BorderBox';
@@ -87,49 +87,52 @@ function IndividualProject({ navigation, route }) {
     }, [sound]);
 
     return (
-        <View style={styles.container}> 
-            <BackArrow navigation={navigation} page='Projects' color="#ABA174"/>
-            <ScrollView>
-                <View style={styles.scrollContent}>
-                    <View style={styles.titleContainer}>
-                        <BorderBox title={name} 
-                                    borderColor={COLORS.tertiary} 
-                                    titleColor={COLORS.tertiary} 
-                                    backgroundColor={COLORS.primary} 
-                                    isCentered={true}> 
-                                    <Image 
-                                        style={styles.image}
-                                        source={require('../../assets/teampic.jpeg')}/>          
-                        </BorderBox>
-                    </View>
-
-                    {audio && (
-                        <View style={styles.audioContainer}>
-                            <View style={styles.audioContainerLeft}>
-                                <CustomButton isPlaying={isPlaying} onPress={togglePlayback}/>
-                                    <Text>00:00
-                                    </Text>
-                            </View>
-                            <Image 
-                                style={styles.voice}
-                                source={require('../../assets/voice.png')}/>     
+        <>
+            <StatusBar barStyle="light-content"/>
+            <SafeAreaView style={styles.container}> 
+                <BackArrow navigation={navigation} page='Projects' color="#ABA174"/>
+                <ScrollView>
+                    <View style={styles.scrollContent}>
+                        <View style={styles.titleContainer}>
+                            <BorderBox title={name} 
+                                        borderColor={COLORS.tertiary} 
+                                        titleColor={COLORS.tertiary} 
+                                        backgroundColor={COLORS.primary} 
+                                        isCentered={true}> 
+                                        <Image 
+                                            style={styles.image}
+                                            source={require('../../assets/teampic.jpeg')}/>          
+                            </BorderBox>
                         </View>
-                    )}
 
-                    <View style={styles.titleContainer}>
-                        <BorderBox title={"Description"} 
-                                    borderColor={COLORS.tertiary} 
-                                    titleColor={COLORS.tertiary}
-                                    backgroundColor={COLORS.primary} 
-                                    isCentered={false}>
-                                    <Text style={styles.text}>
-                                        {description}
-                                    </Text> 
-                        </BorderBox>
+                        {audio && (
+                            <View style={styles.audioContainer}>
+                                <View style={styles.audioContainerLeft}>
+                                    <CustomButton isPlaying={isPlaying} onPress={togglePlayback}/>
+                                        <Text>00:00
+                                        </Text>
+                                </View>
+                                <Image 
+                                    style={styles.voice}
+                                    source={require('../../assets/voice.png')}/>     
+                            </View>
+                        )}
+
+                        <View style={styles.titleContainer}>
+                            <BorderBox title={"Description"} 
+                                        borderColor={COLORS.tertiary} 
+                                        titleColor={COLORS.tertiary}
+                                        backgroundColor={COLORS.primary} 
+                                        isCentered={false}>
+                                        <Text style={styles.text}>
+                                            {description}
+                                        </Text> 
+                            </BorderBox>
+                        </View>
                     </View>
-                </View>
-            </ScrollView>
-        </View>
+                </ScrollView>
+            </SafeAreaView>
+        </>
     );
 }
 
