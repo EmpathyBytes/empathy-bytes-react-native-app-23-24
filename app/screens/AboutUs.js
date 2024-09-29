@@ -1,28 +1,72 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Dimensions } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Dimensions, FlatList } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../../constants/theme';
 import BorderBox from '../../constants/BorderBox';
+import BackArrow from '../../constants/BackArrow';
 const windowWidth = Dimensions.get('window').width;
 const imageHeight = 200;
-const backHome = "<< back to home";
 
 function AboutUs({navigation}) {
+    const devs = [
+        {
+            id: 1,
+            name: "name1",
+            role: "role"
+        },
+        {
+            id: 2,
+            name: "name2",
+            role: "role"
+        },
+        {
+            id: 3,
+            name: "name3",
+            role: "role"
+        },
+        {
+            id: 4,
+            name: "name",
+            role: "role"
+        },
+        {
+            id: 5,
+            name: "name",
+            role: "role"
+        }
+    ]
+
+    const renderItem = ({ dev }) => {
+        console.log(devs)
+        return (
+        <View key={dev.id} style={styles.headshotContainer}>
+            <View style={styles.CircleShapeView}></View>
+            <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
+                {dev.name}
+            </Text>
+            <Text style={{fontSize: 12, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
+                {dev.role}
+            </Text>
+        </View>)
+    }
+
     return (
-        <View style={styles.container}> 
+        <View style={styles.container}>
             <Image
                     style={styles.image}
                     source={require('../../assets/teampic.jpeg')}
             />
             <ScrollView>
-                <View style={styles.scrollContent}> 
-                    <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Home')}>
-                        <Text style={styles.backText}>
-                            {backHome}
-                        </Text>
+                <View style={styles.scrollContent}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                        <View style={styles.backButton}>
+                            <Ionicons name="arrow-back-sharp" size={20} color={COLORS.secondary}/>
+                            <Text style={{fontSize: 14, color: COLORS.secondary}}>Back to home</Text>
+                        </View>
                     </TouchableOpacity>
                     <Text style={styles.titleText}>
-                                    Our Team
-                            </Text>
+                        Our Team
+                    </Text>
                     <View style={styles.boxGap}>
                         <BorderBox title={"What we do"} 
                             borderColor={COLORS.primary} 
@@ -42,6 +86,9 @@ function AboutUs({navigation}) {
                             isCentered={false}
                             style={styles.borderBox}>
                             <View style={[styles.outlineBubble, styles.developerBubble]}>
+                                {/* {devs.map(dev => {
+                                    <Text key={dev.id}>{dev.name}</Text>
+                                })} */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
@@ -51,7 +98,6 @@ function AboutUs({navigation}) {
                                         Role
                                     </Text>
                                 </View>
-                                {/* */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
@@ -61,7 +107,6 @@ function AboutUs({navigation}) {
                                         Role
                                     </Text>
                                 </View>
-                                {/* */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
@@ -71,7 +116,6 @@ function AboutUs({navigation}) {
                                         Role
                                     </Text>
                                 </View>
-                                {/* */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
@@ -81,7 +125,6 @@ function AboutUs({navigation}) {
                                         Role
                                     </Text>
                                 </View>
-                                {/* */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
@@ -91,7 +134,6 @@ function AboutUs({navigation}) {
                                         Role
                                     </Text>
                                 </View>
-                                {/* */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
@@ -125,6 +167,7 @@ const styles = StyleSheet.create({
     scrollContent: {
         flex: 1,
         alignItems: "center",
+        paddingTop: 15,
         paddingBottom: 30,
         width: windowWidth, 
         backgroundColor: "#FFFBE7", 
@@ -154,7 +197,7 @@ const styles = StyleSheet.create({
         color: COLORS.secondary,
         textAlign: "center",
         //fontWeight: 'bold',
-        margin: 20,
+        margin: 30,
     },
     captionText: {
         fontSize: 30,
@@ -206,7 +249,12 @@ const styles = StyleSheet.create({
     },
     backButton: {
         position: "absolute",
-        left: 0,
+        left: -170,
+        MarginTop: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 7,
+        color: COLORS.secondary,
     }
 })
 
