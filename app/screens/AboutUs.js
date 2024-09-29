@@ -8,48 +8,6 @@ const windowWidth = Dimensions.get('window').width;
 const imageHeight = 200;
 
 function AboutUs({navigation}) {
-    const devs = [
-        {
-            id: 1,
-            name: "name1",
-            role: "role"
-        },
-        {
-            id: 2,
-            name: "name2",
-            role: "role"
-        },
-        {
-            id: 3,
-            name: "name3",
-            role: "role"
-        },
-        {
-            id: 4,
-            name: "name",
-            role: "role"
-        },
-        {
-            id: 5,
-            name: "name",
-            role: "role"
-        }
-    ]
-
-    const renderItem = ({ dev }) => {
-        console.log(devs)
-        return (
-        <View key={dev.id} style={styles.headshotContainer}>
-            <View style={styles.CircleShapeView}></View>
-            <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
-                {dev.name}
-            </Text>
-            <Text style={{fontSize: 12, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
-                {dev.role}
-            </Text>
-        </View>)
-    }
-
     return (
         <View style={styles.container}>
             <Image
@@ -86,9 +44,6 @@ function AboutUs({navigation}) {
                             isCentered={false}
                             style={styles.borderBox}>
                             <View style={[styles.outlineBubble, styles.developerBubble]}>
-                                {/* {devs.map(dev => {
-                                    <Text key={dev.id}>{dev.name}</Text>
-                                })} */}
                                 <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
