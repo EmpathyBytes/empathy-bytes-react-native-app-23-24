@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView } from "react-native";
 import { teamData } from "../../constants/teamsData";
 import ListButton from '../../constants/ListButton';
 import BackArrow from '../../constants/BackArrow';
 import { COLORS } from '../../constants/theme';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { fb_app, fb_storage } from '../../firebaseConfig';
+import SafeAndroidView from '../../constants/SafeAndroidView';
 
 //appearance of each button + trying to push the new screen onto nav stack
 const TeamItem = (props) => {
@@ -55,7 +56,7 @@ const renderItem = ({ item }) => {
 //flatlist is like scrollview but better apparently
 function Teams({navigation}) {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={[styles.container, SafeAndroidView.AndroidSafeArea]}>
             <BackArrow navigation={navigation} page='Home' color='black'/>
             <Text style={styles.title}> Teams </Text>
             <FlatList
@@ -66,7 +67,7 @@ function Teams({navigation}) {
                     <View style={styles.separator}/>
                 }>
             </FlatList>
-        </View>
+        </SafeAreaView>
     );
 }
 

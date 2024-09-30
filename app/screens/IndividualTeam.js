@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from "react-native"
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, SafeAreaView } from "react-native"
 import { COLORS } from "../../constants/theme"
 import { teamData } from '../../constants/teamsData';
 import BorderBox from '../../constants/BorderBox';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { fb_app, fb_storage } from '../../firebaseConfig';
+import SafeAndroidView from '../../constants/SafeAndroidView';
 
 function IndividualTeam({ navigation, route }) {
     const { team, id, teamPic } = route.params;
@@ -24,7 +25,7 @@ function IndividualTeam({ navigation, route }) {
     //if screen is app or web team page: render FlatList of description section, tech stack section, and dev section
     if (id == 1 || id === 2) {
         return (
-            <View style={styles.container}>
+            <SafeAreaView style={[styles.container, SafeAndroidView.AndroidSafeArea]}>
                 <FlatList style={styles.flatList}
                     data={teamData[id - 1].description}
                     renderItem={({item}) => <Section id={item.id} text={item.text} title={item.name} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
@@ -34,14 +35,14 @@ function IndividualTeam({ navigation, route }) {
                     }
                     >
                 </FlatList>
-            </View>
+            </SafeAreaView>
         )
     //Section will have to be different
     //if screen is vr/ar screen
     //TODO add way to integrate the 3d objects
     } else if (id == 3) {
         return (
-            <View style={styles.container}>
+            <SafeAreaView style={[styles.container, SafeAndroidView.AndroidSafeArea]}>
                 <FlatList style={styles.flatList}
                     data={teamData[id - 1].description}
                     renderItem={({item}) => <Section id={item.id} text={item.text} title={item.name} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
@@ -50,14 +51,19 @@ function IndividualTeam({ navigation, route }) {
                         <View style={styles.separator}/>
                     }>
                 </FlatList>
-            </View>
+                <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate("VR Screen")}}>
+                    <Text style={styles.text2}>
+                        Go to VR Model
+                    </Text>
+                </TouchableOpacity>
+            </SafeAreaView>
         )
     //Section will have to be different
     //if screen is media screen
     //TODO add way to embed youtube video
     } else if (id == 4) {
         return (
-            <View style={styles.container}>
+            <SafeAreaView style={[styles.container, SafeAndroidView.AndroidSafeArea]}>
                 <FlatList style={styles.flatList}
                     data={teamData[id - 1].description}
                     renderItem={({item}) => <Section id={item.id} text={item.text} title={item.name} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
@@ -67,7 +73,7 @@ function IndividualTeam({ navigation, route }) {
                     }
                     >
                 </FlatList>
-            </View>
+            </SafeAreaView>
         )
     }
 }
@@ -106,7 +112,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: 50,
+        //paddingTop: 50,
         backgroundColor: COLORS.primary,
     },
     separator: {
@@ -119,7 +125,7 @@ const styles = StyleSheet.create({
     },
     flatList: {
         backgroundColor: COLORS.primary,
-        paddingTop: 40,
+        //paddingTop: 40,
         width: "90%"
     },
     text: {
@@ -127,9 +133,17 @@ const styles = StyleSheet.create({
         fontFamily: "Lexend_400Regular",
         margin: 20
     },
+    text2: {
+        textAlign: "center",
+        color: COLORS.primary,
+        fontFamily: "Lexend_400Regular"
+    },
     button: {
-        width: 100,
+        width: "50%",
         height: 80,
+        backgroundColor: COLORS.tertiary,
+        borderRadius: 15,
+        marginBottom: 40,
     },
     titleText: {
         fontSize: 30,

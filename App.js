@@ -7,6 +7,7 @@ import TeamsScreen from './app/screens/TeamsScreen.js';
 import IndividualTeam from "./app/screens/IndividualTeam.js";
 import IndividualProject from "./app/screens/IndividualProject.js";
 import AboutUs from "./app/screens/AboutUs.js";
+import VRScreen from './app/screens/VRScreen.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts, Lexend_400Regular, Lexend_700Bold } from '@expo-google-fonts/lexend';
@@ -82,7 +83,14 @@ export default function App() {
           options={{animation: "fade",
                     headerShadowVisible: false,
                     headerBackTitle:"Back",
-                    headerShown: false}}/>                     
+                    headerShown: false}}/>   
+        <Stack.Screen
+          name="VR Screen"
+          component={VRScreen} 
+          options={{animation: "fade",
+                    headerShadowVisible: false,
+                    headerBackTitle:"Back",
+                    headerShown: false}}/>                   
       </Stack.Navigator>
     </NavigationContainer>
   );

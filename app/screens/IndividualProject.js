@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Dimensions } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, Dimensions, SafeAreaView } from "react-native";
 import { COLORS } from "../../constants/theme";
 import BackArrow from '../../constants/BackArrow';
 import BorderBox from '../../constants/BorderBox';
@@ -7,6 +7,7 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { Audio } from 'expo-av';
 import { fb_storage } from '../../firebaseConfig'; 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import SafeAndroidView from '../../constants/SafeAndroidView';
 const windowWidth = Dimensions.get('window').width;
 
 function IndividualProject({ navigation, route }) {
@@ -87,7 +88,7 @@ function IndividualProject({ navigation, route }) {
     }, [sound]);
 
     return (
-        <View style={styles.container}> 
+        <SafeAreaView style={[styles.container, SafeAndroidView.AndroidSafeArea]}> 
             <BackArrow navigation={navigation} page='Projects' color="#ABA174"/>
             <ScrollView>
                 <View style={styles.scrollContent}>
@@ -129,7 +130,7 @@ function IndividualProject({ navigation, route }) {
                     </View>
                 </View>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: 50,
+        //paddingTop: 50,
         backgroundColor: COLORS.primary,
     },
     titleContainer: {
