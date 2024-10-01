@@ -98,12 +98,11 @@ function IndividualProject({ navigation, route }) {
                                     backgroundColor={COLORS.primary} 
                                     isCentered={true}
                                     >
-                                    <View style={styles.imageContainer}>
+                                    
                                     <Image 
                                         style={[styles.image]}
-                                        source={require('../../assets/teampic.jpeg')}
-                                       />  
-                                       </View>        
+                                        source={require('../../assets/teampic.jpeg')}/>
+                                             
                         </BorderBox>
                     </View>
 
