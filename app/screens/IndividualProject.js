@@ -96,13 +96,13 @@ function IndividualProject({ navigation, route }) {
                                     borderColor={COLORS.tertiary} 
                                     titleColor={COLORS.tertiary} 
                                     backgroundColor={COLORS.primary} 
-                                    isCentered={true}
-                                    >
-                                    
+                                    isCentered={true}>
+                                    <View style={styles.imageContainer}>
                                     <Image 
-                                        style={[styles.image]}
-                                        source={require('../../assets/teampic.jpeg')}/>
-                                             
+                                        style={[styles.image, {marginTop: 150}]}
+                                        source={require('../../assets/teampic.jpeg')}
+                                       />      
+                                        </View>          
                         </BorderBox>
                     </View>
 
@@ -229,19 +229,16 @@ const styles = StyleSheet.create({
         width: windowWidth, 
     },
     image: {
-        height: '50%',
-        width: '1%',
-        aspectRatio: 1.5, // Maintain aspect ratio
-        resizeMode: 'contain',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        width: 300,
+        height: 200,
+        left: 20,
+        bottom: 20,
         borderRadius: 20,
-        marginTop: 150,
-        //marginBottom: 25,
       },
       imageContainer: {
         // alignItems: "center",
         // justifyContent: "center",
+        flexDirection: 'column',
         width: '100%',
     },
 })
