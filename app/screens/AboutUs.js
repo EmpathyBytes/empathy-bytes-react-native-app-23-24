@@ -7,6 +7,37 @@ import BackArrow from '../../constants/BackArrow';
 const windowWidth = Dimensions.get('window').width;
 const imageHeight = 200;
 
+const devs = [
+    {
+        name: 'name1',
+        role: 'role1',
+    },
+    {
+        name: 'name2',
+        role: 'role1',
+    },
+    {
+        name: 'name3',
+        role: 'role1',
+    },
+    {
+        name: 'name4',
+        role: 'role2',
+    },
+    {
+        name: 'name5',
+        role: 'role2',
+    },
+    {
+        name: 'name6',
+        role: 'role2',
+    },
+    {
+        name: 'name7',
+        role: 'role2',
+    },
+]
+
 function AboutUs({navigation}) {
     return (
         <View style={styles.container}>
@@ -44,7 +75,20 @@ function AboutUs({navigation}) {
                             isCentered={false}
                             style={styles.borderBox}>
                             <View style={[styles.outlineBubble, styles.developerBubble]}>
-                                <View style={styles.headshotContainer}>
+                                {devs.map((dev,i) => {
+                                    return (
+                                        <View key={i} style={styles.headshotContainer}>
+                                            <View style={styles.CircleShapeView}></View>
+                                            <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
+                                                {dev.name}
+                                            </Text>
+                                            <Text style={{fontSize: 12, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
+                                                {dev.role}
+                                            </Text>
+                                        </View>
+                                    )
+                                })}
+                                {/* <View style={styles.headshotContainer}>
                                     <View style={styles.CircleShapeView}></View>
                                     <Text style={{fontSize: 15, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
                                         Name
@@ -97,7 +141,7 @@ function AboutUs({navigation}) {
                                     <Text style={{fontSize: 12, color: COLORS.primary, fontFamily: "Lexend_400Regular"}}>
                                         Role
                                     </Text>
-                                </View>
+                                </View> */}
                             </View>
                         </BorderBox>
                     </View>
