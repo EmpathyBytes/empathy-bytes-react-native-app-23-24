@@ -99,9 +99,9 @@ function IndividualProject({ navigation, route }) {
                                     isCentered={true}>
                                     <View style={styles.imageContainer}>
                                     <Image 
-                                        style={[styles.image, {marginTop: 150}]}
+                                       style={[styles.image, {marginTop: 80}]}
                                         source={require('../../assets/teampic.jpeg')}
-                                       />      
+                                       /> 
                                         </View>          
                         </BorderBox>
                     </View>
