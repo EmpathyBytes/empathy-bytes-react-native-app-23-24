@@ -8,7 +8,9 @@ const BorderBox = (props) => {
         <View style={[styles.borderBox, {borderColor: props.borderColor}, props.style]}> 
             {/*if isCentered, center the text, else only apply absolute position and left: 20*/}
             <View style={props.isCentered ? {position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'} : {position: 'absolute'}}>
-              <Text style={[styles.text, {color: props.titleColor, backgroundColor: props.backgroundColor, left: props.isCentered ? 'auto' : 20, fontSize: props.isCentered ? 45 : 30}]}>
+            <Text adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={[styles.text, {color: props.titleColor, backgroundColor: props.backgroundColor, left: props.isCentered ? 'auto' : 20, marginBottom: 100, fontSize: props.isCentered ? 35 : 30}]}>
               {props.title}
               </Text>
             </View>
