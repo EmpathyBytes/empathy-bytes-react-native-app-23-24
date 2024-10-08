@@ -96,10 +96,13 @@ function IndividualProject({ navigation, route }) {
                                     borderColor={COLORS.tertiary} 
                                     titleColor={COLORS.tertiary} 
                                     backgroundColor={COLORS.primary} 
-                                    isCentered={true}> 
+                                    isCentered={true}>
+                                    <View style={styles.imageContainer}>
                                     <Image 
-                                        style={styles.image}
-                                        source={require('../../assets/teampic.jpeg')}/>          
+                                       style={[styles.image, {marginTop: 70}]}
+                                        source={require('../../assets/teampic.jpeg')}
+                                       /> 
+                                        </View>          
                         </BorderBox>
                     </View>
 
@@ -119,12 +122,12 @@ function IndividualProject({ navigation, route }) {
                     <View style={styles.titleContainer}>
                         <BorderBox title={"Description"} 
                                     borderColor={COLORS.tertiary} 
-                                    titleColor={COLORS.tertiary}
+                                    titleColor={COLORS.secondary}
                                     backgroundColor={COLORS.primary} 
                                     isCentered={false}>
                                     <Text style={styles.text}>
                                         {description}
-                                    </Text> 
+                                    </Text>  
                         </BorderBox>
                     </View>
                 </View>
@@ -135,6 +138,7 @@ function IndividualProject({ navigation, route }) {
 
 const styles = StyleSheet.create({
     container: {
+        flexDirection: 'column',
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
@@ -142,11 +146,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.primary,
     },
     titleContainer: {
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 20,
-    },
-    descriptionContainer: {
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         padding: 20,
@@ -158,34 +158,16 @@ const styles = StyleSheet.create({
         marginRight: 20,
         top: 20,
         justifyContent: "center",
-        paddingBottom: 30,
+        paddingBottom: 40,
+        fontSize: 17
     },
     button: {
         width: 70,
         height: 40,
         marginTop: 50,
     },
-    titleText: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: "#FFFFFF",
-        textAlign: "center",
-        fontFamily: "Lexend_400Regular",
-        marginLeft: 20,
-        marginRight: 20,
-    },
-    teamImage: {
-        width: 80,
-        height: 80,
-        padding: 80,
-    },
-    image: {
-        width: 200,
-        resizeMode: 'contain',
-        //aspectRatio: 1.5,
-        /*height: 250,
-        left: 20,
-        bottom: 20,*/
+    borderBox: {
+        width: '90%',
     },
     audioContainer: {
         flex: 1,
@@ -216,10 +198,6 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         backgroundColor: "#FFFBE7",
     },
-    buttonText: {
-        color: "#FFFFFF", 
-        fontSize: 16, 
-    },
     audioButton: {
         color: "#FFFBE7",
     },
@@ -235,8 +213,21 @@ const styles = StyleSheet.create({
     scrollContent: {
         flex: 1,
         alignItems: "center",
-        paddingBottom: 30,
+        paddingBottom: 100,
         width: windowWidth, 
+    },
+    image: {
+        width: 300,
+        height: 200,
+        left: 20,
+        bottom: 20,
+        borderRadius: 20,
+      },
+      imageContainer: {
+        // alignItems: "center",
+        // justifyContent: "center",
+        flexDirection: 'column',
+        width: '100%',
     },
 })
 
