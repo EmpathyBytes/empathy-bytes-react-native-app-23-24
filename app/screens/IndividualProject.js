@@ -158,21 +158,13 @@ const styles = StyleSheet.create({
         marginRight: 20,
         top: 20,
         justifyContent: "center",
-        paddingBottom: 30,
+        paddingBottom: 40,
+        fontSize: 17
     },
     button: {
         width: 70,
         height: 40,
         marginTop: 50,
-    },
-    titleText: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: "#FFFFFF",
-        textAlign: "center",
-        fontFamily: "Lexend_400Regular",
-        marginLeft: 20,
-        marginRight: 20,
     },
     borderBox: {
         width: '90%',
@@ -206,10 +198,6 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         backgroundColor: "#FFFBE7",
     },
-    buttonText: {
-        color: "#FFFFFF", 
-        fontSize: 16, 
-    },
     audioButton: {
         color: "#FFFBE7",
     },
@@ -225,7 +213,7 @@ const styles = StyleSheet.create({
     scrollContent: {
         flex: 1,
         alignItems: "center",
-        paddingBottom: 30,
+        paddingBottom: 100,
         width: windowWidth, 
     },
     image: {
