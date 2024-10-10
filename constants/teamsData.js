@@ -32,12 +32,12 @@ export const teamData = [
                     {
                         name: "Genesis Fu",
                         role: "Team Lead",
-                        image: require('../assets/teams/app_team_dev/temp.png')
+                        image: require('../assets/teams/app_team_dev/genesis.jpg')
                     },
                     {
                         name: "Felicia Jamba",
                         role: "Team Lead",
-                        image: require('../assets/teams/app_team_dev/temp.png')
+                        image: require('../assets/teams/app_team_dev/felicia.jpg')
                     },
                     {
                         name: "Via Hu",
@@ -47,12 +47,12 @@ export const teamData = [
                     {
                         name: "Julian Lautzenheiser",
                         role: "Frontend Developer",
-                        image: require('../assets/teams/app_team_dev/temp.png')
+                        image: require('../assets/teams/app_team_dev/julian.jpg')
                     },
                     {
                         name: "Richard Nguyen",
                         role: "Frontend Developer",
-                        image: require('../assets/teams/app_team_dev/temp.png')
+                        image: require('../assets/teams/app_team_dev/richard.jpg')
                     },
                     {
                         name: "Rose Wen",
@@ -62,7 +62,7 @@ export const teamData = [
                     {
                         name: "Steven Li",
                         role: "Backend Developer",
-                        image: require('../assets/teams/app_team_dev/temp.png')
+                        image: require('../assets/teams/app_team_dev/steven.jpg')
                     },
                     {
                         name: "Aaron Liu",
@@ -72,7 +72,7 @@ export const teamData = [
                     {
                         name: "Eileen Yang",
                         role: "Backend Developer",
-                        image: require('../assets/teams/app_team_dev/temp.png')
+                        image: require('../assets/teams/app_team_dev/eileen.jpg')
                     }
                 ]
             }]
