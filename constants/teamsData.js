@@ -30,12 +30,47 @@ export const teamData = [
                 text: "these are the developers",
                 developers: [
                     {
-                        name: "Developer 1",
+                        name: "Genesis Fu",
+                        role: "Team Lead",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Felicia Jamba",
+                        role: "Team Lead",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Via Hu",
                         role: "Frontend Developer",
                         image: require('../assets/teams/app_team_dev/temp.png')
                     },
                     {
-                        name: "Developer 2",
+                        name: "Julian Lautzenheiser",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Richard Nguyen",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Rose Wen",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Steven Li",
+                        role: "Backend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Aaron Liu",
+                        role: "Backend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Eileen Yang",
                         role: "Backend Developer",
                         image: require('../assets/teams/app_team_dev/temp.png')
                     }
