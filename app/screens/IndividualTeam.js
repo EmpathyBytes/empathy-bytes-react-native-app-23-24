@@ -14,7 +14,7 @@ function IndividualTeam({ navigation, route }) {
             <View style={styles.container}>
                 <FlatList style={styles.flatList}
                     data={teamData[id - 1].description}
-                    renderItem={({item}) => <Section id={item.id} text={item.text} teamPic={teamPic} title={item.name} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
+                    renderItem={({item}) => <Section id={item.id} text={item.text} teamPic={teamPic} title={item.name} techStackImages={item.techStackImages} developers={item.developers} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
                     keyExtractor={item => item.id}
                     ItemSeparatorComponent={
                         <View style={styles.separator}/>
@@ -31,7 +31,7 @@ function IndividualTeam({ navigation, route }) {
             <View style={styles.container}>
                 <FlatList style={styles.flatList}
                     data={teamData[id - 1].description}
-                    renderItem={({item}) => <Section id={item.id} text={item.text} teamPic={teamPic} title={item.name} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
+                    renderItem={({item}) => <Section id={item.id} text={item.text} teamPic={teamPic} title={item.name} techStackImages={item.techStackImages} developers={item.developers} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
                     keyExtractor={item => item.id}
                     ItemSeparatorComponent={
                         <View style={styles.separator}/>
@@ -47,7 +47,7 @@ function IndividualTeam({ navigation, route }) {
             <View style={styles.container}>
                 <FlatList style={styles.flatList}
                     data={teamData[id - 1].description}
-                    renderItem={({item}) => <Section id={item.id} text={item.text} title={item.name} teamPic={teamPic} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
+                    renderItem={({item}) => <Section id={item.id} text={item.text} title={item.name} techStackImages={item.techStackImages} developers={item.developers} teamPic={teamPic} titleColor={COLORS.tertiary} borderColor={COLORS.tertiary} backgroundColor={COLORS.primary}/>}
                     keyExtractor={item => item.id}
                     ItemSeparatorComponent={
                         <View style={styles.separator}/>
@@ -73,6 +73,48 @@ const Section = (props) => {
                 </View>
             </BorderBox>
         )
+    } else if (props.id === 2 && props.techStackImages) {
+        return (
+            <BorderBox 
+                title={props.title}
+                titleColor={props.titleColor}
+                borderColor={props.borderColor}
+                backgroundColor={props.backgroundColor}
+                isCentered={false}
+            >
+                <Text style={styles.text}>
+                    {props.text}
+                </Text>
+                <View style={styles.techStackContainer}>
+                    {props.techStackImages.map((image, index) => (
+                        <Image key={index} source={image} style={styles.techStackImage} />
+                    ))}
+                </View>
+            </BorderBox>
+        );
+    } else if (props.id === 3) {
+        return (
+            <BorderBox 
+                title={props.title}
+                titleColor={props.titleColor}
+                borderColor={props.borderColor}
+                backgroundColor={props.backgroundColor}
+                isCentered={false}
+            >
+                <Text style={styles.text}>
+                    {props.text}
+                </Text>
+                <View style={styles.developersContainer}>
+                    {props.developers.map((dev, index) => (
+                        <View key={index} style={styles.developerCard}>
+                            <Image style={styles.developerImage} source={dev.image} />
+                            <Text style={styles.developerName}>{dev.name}</Text>
+                            <Text style={styles.developerRole}>{dev.role}</Text>
+                        </View>
+                    ))}
+                </View>
+            </BorderBox>
+        );
     } else {
         return (
             <BorderBox title={props.title}
@@ -137,6 +179,48 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         // borderColor: COLORS.secondary, // Border color
         // borderRadius: 10, // Border radius for rounded corners
+    },
+    developersContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    developerCard: {
+        alignItems: 'center',
+        margin: 10,
+        width: 100,
+    },
+    developerImage: {
+        width: 80,
+        height: 80,
+        borderRadius: 40,
+        marginBottom: 5,
+    },
+    developerName: {
+        fontSize: 14,
+        color: COLORS.tertiary,
+        fontFamily: "Lexend_700Bold",
+        textAlign: 'center',
+    },
+    developerRole: {
+        fontSize: 12,
+        color: COLORS.tertiary,
+        fontFamily: "Lexend_400Regular",
+        textAlign: 'center',
+    },
+    techStackContainer: {
+        flexDirection: 'row', // Arrange images in a row
+        flexWrap: 'wrap',     // Allow wrapping to next line
+        justifyContent: 'center', // Center the images horizontally
+        marginTop: 10,
+        marginBottom: 10,
+    },
+    techStackImage: {
+        width: '40%', // Set width to 45% to allow two images per row
+        height: 100,  // Adjust height as needed
+        margin: 5,    // Add some margin around each image for spacing
+        resizeMode: 'contain', // Maintain aspect ratio
     },
 })
 

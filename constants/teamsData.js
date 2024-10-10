@@ -16,12 +16,30 @@ export const teamData = [
             {
                 id: 2,
                 name: "Tech Stack",
-                text: "React Native, Expo, JavaScript, Google Firestore"
+                text: "React Native, Expo, JavaScript, Google Firestore",
+                techStackImages: [
+                    require('../assets/teams/app_team_tech_stack/react.png'),
+                    require('../assets/teams/app_team_tech_stack/expo.png'),
+                    require('../assets/teams/app_team_tech_stack/javascript.png'),
+                    require('../assets/teams/app_team_tech_stack/firestore.png')
+                ]
             },
             {
                 id: 3,
                 name: "Developers",
-                text: "these are the developers"
+                text: "these are the developers",
+                developers: [
+                    {
+                        name: "Developer 1",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    },
+                    {
+                        name: "Developer 2",
+                        role: "Backend Developer",
+                        image: require('../assets/teams/app_team_dev/temp.png')
+                    }
+                ]
             }]
     },
     {
@@ -41,12 +59,29 @@ export const teamData = [
             {
                 id: 2,
                 name: "Tech Stack",
-                text: "GatsbyJS, Decoupled Drupal, Three.js"
+                text: "GatsbyJS, Decoupled Drupal, Three.js",
+                techStackImages: [
+                    require('../assets/teams/web_team_tech_stack/gatsby.png'),
+                    require('../assets/teams/web_team_tech_stack/drupal.png'),
+                    require('../assets/teams/web_team_tech_stack/threejs.png'),
+                ]
             },
             {
                 id: 3,
                 name: "Developers",
-                text: "these are the developers"
+                text: "these are the developers",
+                developers: [
+                    {
+                        name: "Developer 1",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/web_team_dev/temp.png')
+                    },
+                    {
+                        name: "Developer 2",
+                        role: "Backend Developer",
+                        image: require('../assets/teams/web_team_dev/temp.png')
+                    }
+                ]
             }]
     },
     {
@@ -66,12 +101,28 @@ export const teamData = [
             {
                 id: 2,
                 name: "Tech Stack",
-                text: "Unity, Blender "
+                text: "Unity, Blender ",
+                techStackImages: [
+                    require('../assets/teams/vr_ar_team_tech_stack/unity.png'),
+                    require('../assets/teams/vr_ar_team_tech_stack/blender.png'),
+                ]
             },
             {
                 id: 3,
                 name: "Developers",
-                text: "these are the developers"
+                text: "these are the developers",
+                developers: [
+                    {
+                        name: "Developer 1",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/vr_ar_team_dev/temp.png')
+                    },
+                    {
+                        name: "Developer 2",
+                        role: "Backend Developer",
+                        image: require('../assets/teams/vr_ar_team_dev/temp.png')
+                    }
+                ]
             }]
     },
     {
@@ -92,12 +143,27 @@ export const teamData = [
             {
                 id: 2,
                 name: "Tech Stack",
-                text: "this is the tech stack"
+                text: "this is the tech stack",
+                techStackImages: [
+                    require('../assets/teams/media_team_tech_stack/camera.png'),
+                ]
             },
             {
                 id: 3,
                 name: "Developers",
-                text: "these are the developers"
+                text: "these are the developers",
+                developers: [
+                    {
+                        name: "Developer 1",
+                        role: "Frontend Developer",
+                        image: require('../assets/teams/media_team_dev/temp.png')
+                    },
+                    {
+                        name: "Developer 2",
+                        role: "Backend Developer",
+                        image: require('../assets/teams/media_team_dev/temp.png')
+                    }
+                ]
             }]
     }
 ]
