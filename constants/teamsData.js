@@ -313,9 +313,15 @@ export const teamData = [
                 id: 2,
                 tag: 'tech-stack',
                 name: "Tech Stack",
-                text: "this is the tech stack",
+                text: "Notion, Figma, Discord, Google Products/Drive, YouTube, and DaVinci Resolve ",
                 techStackImages: [
-                    require('../assets/teams/media_team_tech_stack/camera.png'),
+                    //require('../assets/teams/media_team_tech_stack/camera.png'),
+                    require('../assets/teams/media_team_tech_stack/discord.png'),
+                    require('../assets/teams/media_team_tech_stack/figma.png'),
+                    require('../assets/teams/media_team_tech_stack/notion.png'),
+                    require('../assets/teams/media_team_tech_stack/google.png'),
+                    require('../assets/teams/media_team_tech_stack/youtube.png'),
+                    require('../assets/teams/media_team_tech_stack/davinci.png'),
                 ]
             },
             {
